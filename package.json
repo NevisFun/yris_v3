@@ -2,13 +2,17 @@
   "name": "yris_v3",
   "version": "0.1.0",
   "private": true,
+  "description": "yongze business information system",
+  "author": "wang.chaofeng",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.8.3",
+    "ant-design-vue": "^2.1.6",
+    "axios": "^0.21.1",
+    "core-js": "^3.14.0",
     "vue": "^3.0.4",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
@@ -25,26 +29,13 @@
     "eslint": "^7.20.0",
     "eslint-plugin-vue": "^7.2.0",
     "less": "^4.0.0",
-    "less-loader": "^8.0.0"
+    "less-loader": "^9.0.0"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "@babel/eslint-parser"
-    },
-    "rules": {}
+  "browser": {
+    "path": false,
+    "qs": false
   },
   "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
+    "last 2 Chrome versions"
   ]
 }

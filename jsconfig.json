@@ -1,19 +1,18 @@
+/**
+ * @author wang.chaofeng
+ * @email hzspaces@126.com
+ * @create date 2021-06-05 23:37:02
+ * @modify date 2021-06-05 23:37:02
+ * @desc Javascript配置
+ */
+
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
-    ]
+    "sourceMap": true,
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   }
 }
