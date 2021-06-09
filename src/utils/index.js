@@ -1,6 +1,6 @@
 /**
  * @author wang.chaofeng
- * @description 格式化时间
+ * @desc 格式化时间
  * @param time
  * @param cFormat
  * @returns {string|null}
@@ -45,7 +45,7 @@ export function parseTime(time, cFormat) {
 
 /**
  * @author wang.chaofeng
- * @description 格式化时间
+ * @desc 格式化时间
  * @param time
  * @param option
  * @returns {string}
@@ -80,7 +80,7 @@ export function formatTime(time, option) {
 
 /**
  * @author wang.chaofeng
- * @description 将url请求参数转为json格式
+ * @desc 将url请求参数转为json格式
  * @param url
  * @returns {{}|any}
  */
@@ -102,7 +102,7 @@ export function paramObj(url) {
 
 /**
  * @author wang.chaofeng
- * @description 父子关系的数组转换成树形结构数据
+ * @desc 父子关系的数组转换成树形结构数据
  * @param data
  * @returns {*}
  */
@@ -127,7 +127,7 @@ export function translateDataToTree(data) {
 
 /**
  * @author wang.chaofeng
- * @description 树形结构数据转换成父子关系的数组
+ * @desc 树形结构数据转换成父子关系的数组
  * @param data
  * @returns {[]}
  */
@@ -154,7 +154,7 @@ export function translateTreeToData(data) {
 
 /**
  * @author wang.chaofeng
- * @description 10位时间戳转换
+ * @desc 10位时间戳转换
  * @param time
  * @returns {string}
  */
@@ -176,7 +176,7 @@ export function tenBitTimestamp(time) {
 
 /**
  * @author wang.chaofeng
- * @description 13位时间戳转换
+ * @desc 13位时间戳转换
  * @param time
  * @returns {string}
  */
@@ -198,7 +198,7 @@ export function thirteenBitTimestamp(time) {
 
 /**
  * @author wang.chaofeng
- * @description 获取随机id
+ * @desc 获取随机id
  * @param length
  * @returns {string}
  */
@@ -213,7 +213,7 @@ export function uuid(length = 32) {
 
 /**
  * @author wang.chaofeng
- * @description m到n的随机数
+ * @desc m到n的随机数
  * @param m
  * @param n
  * @returns {number}
@@ -224,7 +224,7 @@ export function random(m, n) {
 
 /**
  * @author wang.chaofeng
- * @description addEventListener
+ * @desc addEventListener
  * @type {function(...[*]=)}
  */
 export const on = (function() {
@@ -237,7 +237,7 @@ export const on = (function() {
 
 /**
  * @author wang.chaofeng
- * @description removeEventListener
+ * @desc removeEventListener
  * @type {function(...[*]=)}
  */
 export const off = (function() {

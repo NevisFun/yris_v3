@@ -2,12 +2,12 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-07 20:13:05
- * @modify date 2021-06-07 20:13:05
+ * @modify date 2021-06-08 20:55:51
  * @desc 获取用户信息请求
  */
 
 import request from './request.js';
-import { tokenName } from '../config/index.js';
+import config from '../config/index.js';
 
 export async function login(data) {
   return request({
@@ -22,7 +22,7 @@ export function getUserInfo(accessToken) {
     url: '/userInfo',
     method: 'post',
     data: {
-      [tokenName]: accessToken
+      [config.tokenName]: accessToken
     }
   });
 }

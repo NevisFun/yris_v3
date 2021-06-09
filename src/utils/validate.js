@@ -1,6 +1,6 @@
 /**
  * @author wang.chaofeng
- * @description 判读是否为外链
+ * @desc 判读是否为外链
  * @param path
  * @returns {boolean}
  */
@@ -10,7 +10,7 @@ export function isExternal(path) {
 
 /**
  * @author wang.chaofeng
- * @description 校验密码是否小于6位
+ * @desc 校验密码是否小于6位
  * @param value
  * @returns {boolean}
  */
@@ -20,7 +20,7 @@ export function isPassword(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否为数字
+ * @desc 判断是否为数字
  * @param value
  * @returns {boolean}
  */
@@ -31,7 +31,7 @@ export function isNumber(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是名称
+ * @desc 判断是否是名称
  * @param value
  * @returns {boolean}
  */
@@ -42,7 +42,7 @@ export function isName(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否为IP
+ * @desc 判断是否为IP
  * @param ip
  * @returns {boolean}
  */
@@ -53,7 +53,7 @@ export function isIP(ip) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是网站
+ * @desc 判断是否是网站
  * @param url
  * @returns {boolean}
  */
@@ -64,7 +64,7 @@ export function isUrl(url) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是小写字母
+ * @desc 判断是否是小写字母
  * @param value
  * @returns {boolean}
  */
@@ -75,7 +75,7 @@ export function isLowerCase(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是大写字母
+ * @desc 判断是否是大写字母
  * @param value
  * @returns {boolean}
  */
@@ -86,7 +86,7 @@ export function isUpperCase(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是大写字母开头
+ * @desc 判断是否是大写字母开头
  * @param value
  * @returns {boolean}
  */
@@ -97,7 +97,7 @@ export function isAlphabets(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是字符串
+ * @desc 判断是否是字符串
  * @param value
  * @returns {boolean}
  */
@@ -107,7 +107,7 @@ export function isString(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是数组
+ * @desc 判断是否是数组
  * @param arg
  * @returns {arg is any[]|boolean}
  */
@@ -120,7 +120,7 @@ export function isArray(arg) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是端口号
+ * @desc 判断是否是端口号
  * @param value
  * @returns {boolean}
  */
@@ -131,7 +131,7 @@ export function isPort(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是第二代身份证号
+ * @desc 判断是否是第二代身份证号
  * @param value
  * @returns {boolean}
  */
@@ -142,7 +142,7 @@ export function isIdCard(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是邮箱
+ * @desc 判断是否是邮箱
  * @param value
  * @returns {boolean}
  */
@@ -153,7 +153,7 @@ export function isEmail(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否中文
+ * @desc 判断是否中文
  * @param value
  * @returns {boolean}
  */
@@ -164,7 +164,7 @@ export function isChinese(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否为空
+ * @desc 判断是否为空
  * @param value
  * @returns {boolean}
  */
@@ -174,7 +174,7 @@ export function isBlank(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否固话
+ * @desc 判断是否固话
  * @param value
  * @returns {boolean}
  */
@@ -186,7 +186,7 @@ export function isFixedPhone(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否是手机号
+ * @desc 判断是否是手机号
  * @param value
  * @returns {boolean}
  */
@@ -197,7 +197,7 @@ export function isMobilePhone(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否为数字且最多两位小数
+ * @desc 判断是否为数字且最多两位小数
  * @param value
  * @returns {boolean}
  */
@@ -208,7 +208,7 @@ export function isNum(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断经度 -180.0～+180.0（整数部分为0～180，必须输入1到5位小数）
+ * @desc 判断经度 -180.0～+180.0（整数部分为0～180，必须输入1到5位小数）
  * @param value
  * @returns {boolean}
  */
@@ -219,7 +219,7 @@ export function isLongitude(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断纬度 -90.0～+90.0（整数部分为0～90，必须输入1到5位小数）
+ * @desc 判断纬度 -90.0～+90.0（整数部分为0～90，必须输入1到5位小数）
  * @param value
  * @returns {boolean}
  */
@@ -230,7 +230,7 @@ export function isLatitude(value) {
 
 /**
  * @author wang.chaofeng
- * @description 判断是否为json
+ * @desc 判断是否为json
  * @param value
  * @returns {boolean}
  */

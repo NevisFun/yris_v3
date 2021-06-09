@@ -2,24 +2,22 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-07 20:18:55
- * @modify date 2021-06-07 20:24:07
+ * @modify date 2021-06-08 21:04:51
  * @desc 后端请求通用设置
  */
 
 import axios from 'axios';
 import queryString from 'qs';
-import { serverUrl, contentType, requestTimeout, successCode } from '../config/index.js';
-import { debounce, tokenName } from '../config/setting.js';
+import config from '../config/index.js';
 import store from '../store/index.js';
 import router from '../router/index.js';
-import { isArray } from '../utils/validate.js';
 import { message } from 'ant-design-vue';
 
 let loadingInstance;
 
 /**
  * @author wang.chaofeng
- * @description 处理code异常
+ * @desc 处理code异常
  * @param {*} code
  * @param {*} text
  */
@@ -40,27 +38,27 @@ const handleCode = (code, text) => {
 
 /**
  * @author wang.chaofeng
- * @description axios初始化
+ * @desc axios初始化
  */
 const instance = axios.create({
-  serverUrl,
-  timeout: requestTimeout,
+  url: config.serverUrl,
+  timeout: config.requestTimeout,
   headers: {
-    'Content-Type': contentType
+    'Content-Type': config.contentType
   }
 });
 
 /**
  * @author wang.chaofeng
- * @description axios请求拦截器
+ * @desc axios请求拦截器
  */
 instance.interceptors.request.use(
   (config) => {
-    config.headers[tokenName] = store.getters['user/accessToken'];
+    config.headers[config.tokenName] = store.getters['user/accessToken'];
 
     if (config.data && config.headers['Content-Type'] === 'application/x-www-form-urlencoded;charset=UTF-8')
       config.data = queryString.stringify(config.data);
-    if (debounce.some((item) => config.url.includes(item))) {
+    if (config.debounce.some((item) => config.url.includes(item))) {
       //这里写加载动画
     }
     return config;
@@ -72,22 +70,19 @@ instance.interceptors.request.use(
 
 /**
  * @author wang.chaofeng
- * @description axios响应拦截器
+ * @desc axios响应拦截器
  */
 instance.interceptors.response.use(
   (response) => {
     if (loadingInstance) loadingInstance.close();
 
     const { data, config } = response;
-    const { code, msg } = data;
-    // 操作正常Code数组
-    const codeVerificationArray = isArray(successCode) ? [...successCode] : [...[successCode]];
-    // 是否操作正常
-    if (codeVerificationArray.includes(code)) {
+    const { code, messageText } = data;
+    if (config.successCode.includes(code)) {
       return data;
     } else {
-      handleCode(code, msg);
-      return Promise.reject('请求异常拦截:' + JSON.stringify({ url: config.url, code, msg }) || 'Error');
+      handleCode(code, messageText);
+      return Promise.reject('请求异常拦截:' + JSON.stringify({ url: config.url, code, messageText }) || 'Error');
     }
   },
   (error) => {
