@@ -1,0 +1,67 @@
+/**
+ * @author wang.chaofeng
+ * @email hzspaces@126.com
+ * @create date 2021-06-09 20:22:58
+ * @modify date 2021-06-10 22:12:04
+ * @desc 全局元素默认样式
+ */
+
+* {
+  font-family: 'Microsoft YaHei', '微软雅黑', Helvetica, Tahoma, Arial, STXihei, '华文细黑', sans-serif;
+
+  margin: 0px;
+  padding: 0px;
+
+  /* 不自动换行，溢出省略号 */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* 全局图标 */
+i[class*='yrisicon'] {
+  font-family: 'iconfont' !important;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background-color: rgba(black, 0.05);
+}
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(black, 0.1);
+  border-radius: 6px;
+}

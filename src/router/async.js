@@ -2,7 +2,7 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-05 23:48:07
- * @modify date 2021-06-09 13:15:54
+ * @modify date 2021-06-09 16:47:14
  * @desc 异步权限路由列表
  */
 
@@ -76,6 +76,39 @@ const asyncRoutes = [
     ]
   },
   {
+    path: '/finance',
+    name: 'Finance',
+    component: Layout,
+    redirect: '/finance/tip',
+    meta: {
+      title: '财务管理',
+      icon: 'yrisicon-finance',
+      role: ['SUPER', 'ADMIN', 'COMMON']
+    },
+    children: [
+      {
+        path: '/finance/capital',
+        name: 'Capital',
+        component: () => import('../views/finance/capital/index.vue'),
+        meta: {
+          title: '业务资金',
+          icon: 'yrisicon-capital',
+          role: ['SUPER', 'ADMIN', 'COMMON']
+        }
+      },
+      {
+        path: '/finance/cost',
+        name: 'Cost',
+        component: () => import('../views/finance/cost/index.vue'),
+        meta: {
+          title: '日常资金',
+          icon: 'yrisicon-cost',
+          role: ['SUPER', 'ADMIN', 'COMMON']
+        }
+      }
+    ]
+  },
+  {
     path: '/help',
     name: 'Help',
     component: Layout,
@@ -97,7 +130,7 @@ const asyncRoutes = [
         }
       },
       {
-        path: '/business/about',
+        path: '/help/about',
         name: 'About',
         component: () => import('../views/help/about.vue'),
         meta: {

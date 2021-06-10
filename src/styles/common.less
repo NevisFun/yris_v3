@@ -1,0 +1,55 @@
+/**
+ * @author wang.chaofeng
+ * @email hzspaces@126.com
+ * @create date 2021-06-09 22:21:59
+ * @modify date 2021-06-09 22:21:59
+ * @desc 全局通用引用样式
+ */
+@import './variable.less';
+
+.clear-fix {
+  &::after {
+    display: block;
+    height: 0;
+    content: '';
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+// 次要文字
+.minor-text {
+  font-size: @font-size-normal;
+  font-weight: normal;
+  color: @text-color-minor;
+}
+
+// 重要文字
+.major-text {
+  font-size: @font-size-large;
+  font-weight: 600;
+  color: @text-color-major;
+}
+
+//普通标题
+.caption-text {
+  .minor-text();
+  &::after {
+    content: '：';
+  }
+}
+
+//连接文本
+.link-text {
+  cursor: pointer;
+  color: @theme-color;
+}
+
+// 透明色块
+.white-block {
+  font-size: @font-size-large;
+  color: transparent;
+  &::before {
+    content: '\e6a2';
+  }
+}

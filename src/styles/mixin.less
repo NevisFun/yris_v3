@@ -1,0 +1,63 @@
+/**
+ * @author wang.chaofeng
+ * @email hzspaces@126.com
+ * @create date 2021-06-09 22:17:53
+ * @modify date 2021-06-09 22:17:53
+ * @desc 全局样式函数
+ */
+
+@import './variable.less';
+
+//栅格布局
+.set-grid-layout(@columns: none, @rows: none, @gap: @panel-gap) {
+  display: grid;
+  grid-template: @rows / @columns;
+  align-items: center;
+  align-content: center;
+  gap: @gap;
+}
+
+// //表单布局
+// .form-grid {
+//   padding: @gap-panel;
+//   display: grid;
+//   gap: @gap-component;
+//   align-items: center;
+//   align-content: center;
+// }
+
+// // 工作空间
+// @mixin work-space(@columns, @rows: none, @areas: none, @margin: @padding-frame) {
+//   position: absolute;
+//   top: @margin;
+//   bottom: @margin;
+//   left: @margin;
+//   right: @margin;
+//   overflow: hidden;
+
+//   display: grid;
+//   grid-template: @rows/ @columns;
+//   grid-template-areas: @areas;
+//   grid-column-gap: if(@margin == 0, 0, @gap-group);
+// }
+
+// // 通高空间
+// @mixin full-space(@padding-top: auto, @padding-bottom: 0, @margin: @padding-area) {
+//   position: absolute;
+//   top: if(@padding-top == auto, auto, @margin + @padding-top);
+//   bottom: @margin + @padding-bottom;
+//   left: @margin;
+//   right: @margin;
+// }
+
+// // 屏幕空间
+// @mixin fixed-space(@width: auto, @height: auto) {
+//   position: fixed;
+//   left: 50%;
+//   top: 50%;
+//   width: @width;
+//   height: @height;
+//   margin-left: -@width / 2;
+//   margin-top: -@height / 2;
+//   z-index: 99;
+// }

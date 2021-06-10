@@ -3,8 +3,19 @@
  * @email hzspaces@126.com
  * @create date 2021-06-05 21:54:22
  * @modify date 2021-06-05 21:54:22
- * @desc [antdisign 样式配置]
+ * @desc ant-disign-vue 样式配置
  */
 
 @import '~ant-design-vue/dist/antd.less';
-@primary-color: red;
+@import './variable.less';
+
+@primary-color: @theme-color;
+// @info-color: @primary-color;
+// @success-color: @color-success;
+// @processing-color: @primary-color;
+// @error-color: @color-danger;
+// @highlight-color: @red-5;
+// @warning-color: @color-warning;
+// @normal-color: #d9d9d9;
+
+@layout-sider-background: @back-color-side;

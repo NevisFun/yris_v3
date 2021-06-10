@@ -23,8 +23,8 @@ const theme = {
   //显示导航折叠
   showCollapse: true,
   //显示顶部进度
-  showProgressBar: true,
+  showProgress: true,
   //显示全屏组件
-  showFullScreen: true
+  showScreen: true
 };
 export default theme;

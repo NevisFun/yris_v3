@@ -1,0 +1,470 @@
+@font-face {
+  font-family: 'iconfont'; /* Project id 1445121 */
+  src: url('//at.alicdn.com/t/font_1445121_zstjgc5ojf.woff2?t=1622693988402') format('woff2'),
+    url('//at.alicdn.com/t/font_1445121_zstjgc5ojf.woff?t=1622693988402') format('woff'),
+    url('//at.alicdn.com/t/font_1445121_zstjgc5ojf.ttf?t=1622693988402') format('truetype');
+}
+
+.yrisicon-fix:before {
+  content: '\e6b6';
+}
+
+.yrisicon-deliver:before {
+  content: '\e6b4';
+}
+
+.yrisicon-receive:before {
+  content: '\e6b5';
+}
+
+.yrisicon-shrink:before {
+  content: '\e6b3';
+}
+
+.yrisicon-expand:before {
+  content: '\e6b1';
+}
+
+.yrisicon-collapse:before {
+  content: '\e6b2';
+}
+
+.yrisicon-logo:before {
+  content: '\e666';
+}
+
+.yrisicon-pull:before {
+  content: '\e6b0';
+}
+
+.yrisicon-loop:before {
+  content: '\e6af';
+}
+
+.yrisicon-next:before {
+  content: '\e6ab';
+}
+
+.yrisicon-down:before {
+  content: '\e6ac';
+}
+
+.yrisicon-previous:before {
+  content: '\e6ad';
+}
+
+.yrisicon-up:before {
+  content: '\e6ae';
+}
+
+.yrisicon-no:before {
+  content: '\e6aa';
+}
+
+.yrisicon-rebar:before {
+  content: '\e6a6';
+}
+
+.yrisicon-factory:before {
+  content: '\e6a7';
+}
+
+.yrisicon-universal:before {
+  content: '\e6a8';
+}
+
+.yrisicon-map:before {
+  content: '\e6a9';
+}
+
+.yrisicon-date:before {
+  content: '\e6a5';
+}
+
+.yrisicon-task:before {
+  content: '\e67d';
+}
+
+.yrisicon-high:before {
+  content: '\e6a3';
+}
+
+.yrisicon-middle:before {
+  content: '\e6a4';
+}
+
+.yrisicon-block:before {
+  content: '\e6a2';
+}
+
+.yrisicon-export:before {
+  content: '\e6a1';
+}
+
+.yrisicon-revoke:before {
+  content: '\e69f';
+}
+
+.yrisicon-dotline:before {
+  content: '\e6a0';
+}
+
+.yrisicon-bar:before {
+  content: '\e60d';
+}
+
+.yrisicon-radar:before {
+  content: '\e60e';
+}
+
+.yrisicon-chart:before {
+  content: '\e61d';
+}
+
+.yrisicon-area:before {
+  content: '\e61e';
+}
+
+.yrisicon-pie:before {
+  content: '\e643';
+}
+
+.yrisicon-spread:before {
+  content: '\e644';
+}
+
+.yrisicon-picture:before {
+  content: '\e645';
+}
+
+.yrisicon-line:before {
+  content: '\e646';
+}
+
+.yrisicon-invalid:before {
+  content: '\e611';
+}
+
+.yrisicon-remark:before {
+  content: '\e642';
+}
+
+.yrisicon-wrong:before {
+  content: '\e647';
+}
+
+.yrisicon-information:before {
+  content: '\e648';
+}
+
+.yrisicon-success:before {
+  content: '\e649';
+}
+
+.yrisicon-card:before {
+  content: '\e64a';
+}
+
+.yrisicon-summary:before {
+  content: '\e64d';
+}
+
+.yrisicon-honor:before {
+  content: '\e691';
+}
+
+.yrisicon-list:before {
+  content: '\e692';
+}
+
+.yrisicon-message:before {
+  content: '\e693';
+}
+
+.yrisicon-warehouse:before {
+  content: '\e694';
+}
+
+.yrisicon-contract:before {
+  content: '\e695';
+}
+
+.yrisicon-driver:before {
+  content: '\e696';
+}
+
+.yrisicon-attechment:before {
+  content: '\e697';
+}
+
+.yrisicon-count:before {
+  content: '\e698';
+}
+
+.yrisicon-telephone:before {
+  content: '\e699';
+}
+
+.yrisicon-overdue:before {
+  content: '\e69a';
+}
+
+.yrisicon-truck:before {
+  content: '\e69b';
+}
+
+.yrisicon-label:before {
+  content: '\e69c';
+}
+
+.yrisicon-ship:before {
+  content: '\e69d';
+}
+
+.yrisicon-purchase:before {
+  content: '\e69e';
+}
+
+.yrisicon-reset:before {
+  content: '\e613';
+}
+
+.yrisicon-pause:before {
+  content: '\e614';
+}
+
+.yrisicon-search:before {
+  content: '\e619';
+}
+
+.yrisicon-remove:before {
+  content: '\e636';
+}
+
+.yrisicon-view:before {
+  content: '\e637';
+}
+
+.yrisicon-sort:before {
+  content: '\e638';
+}
+
+.yrisicon-filter:before {
+  content: '\e63a';
+}
+
+.yrisicon-correct:before {
+  content: '\e63b';
+}
+
+.yrisicon-insert:before {
+  content: '\e63c';
+}
+
+.yrisicon-lock:before {
+  content: '\e63f';
+}
+
+.yrisicon-location:before {
+  content: '\e640';
+}
+
+.yrisicon-move:before {
+  content: '\e641';
+}
+
+.yrisicon-send:before {
+  content: '\e64e';
+}
+
+.yrisicon-back:before {
+  content: '\e64f';
+}
+
+.yrisicon-group:before {
+  content: '\e650';
+}
+
+.yrisicon-link:before {
+  content: '\e651';
+}
+
+.yrisicon-recycle:before {
+  content: '\e661';
+}
+
+.yrisicon-confirm:before {
+  content: '\e684';
+}
+
+.yrisicon-cancel:before {
+  content: '\e685';
+}
+
+.yrisicon-delete:before {
+  content: '\e686';
+}
+
+.yrisicon-edit:before {
+  content: '\e687';
+}
+
+.yrisicon-input:before {
+  content: '\e688';
+}
+
+.yrisicon-clear:before {
+  content: '\e689';
+}
+
+.yrisicon-reload:before {
+  content: '\e68a';
+}
+
+.yrisicon-submit:before {
+  content: '\e68b';
+}
+
+.yrisicon-save:before {
+  content: '\e68c';
+}
+
+.yrisicon-print:before {
+  content: '\e68d';
+}
+
+.yrisicon-match:before {
+  content: '\e68e';
+}
+
+.yrisicon-import:before {
+  content: '\e68f';
+}
+
+.yrisicon-copy:before {
+  content: '\e690';
+}
+
+.yrisicon-draft:before {
+  content: '\e683';
+}
+
+.yrisicon-visible:before {
+  content: '\e67e';
+}
+
+.yrisicon-account:before {
+  content: '\e67f';
+}
+
+.yrisicon-password:before {
+  content: '\e680';
+}
+
+.yrisicon-validation:before {
+  content: '\e681';
+}
+
+.yrisicon-exit:before {
+  content: '\e682';
+}
+
+.yrisicon-log:before {
+  content: '\e60a';
+}
+
+.yrisicon-dictionary:before {
+  content: '\e639';
+}
+
+.yrisicon-data:before {
+  content: '\e63e';
+}
+
+.yrisicon-capital:before {
+  content: '\e667';
+}
+
+.yrisicon-book:before {
+  content: '\e668';
+}
+
+.yrisicon-setup:before {
+  content: '\e669';
+}
+
+.yrisicon-report:before {
+  content: '\e66a';
+}
+
+.yrisicon-home:before {
+  content: '\e66b';
+}
+
+.yrisicon-price:before {
+  content: '\e66c';
+}
+
+.yrisicon-finance:before {
+  content: '\e66d';
+}
+
+.yrisicon-customer:before {
+  content: '\e66e';
+}
+
+.yrisicon-invoice:before {
+  content: '\e66f';
+}
+
+.yrisicon-cost:before {
+  content: '\e670';
+}
+
+.yrisicon-bank:before {
+  content: '\e671';
+}
+
+.yrisicon-bill:before {
+  content: '\e672';
+}
+
+.yrisicon-business:before {
+  content: '\e673';
+}
+
+.yrisicon-system:before {
+  content: '\e674';
+}
+
+.yrisicon-authority:before {
+  content: '\e675';
+}
+
+.yrisicon-settling:before {
+  content: '\e676';
+}
+
+.yrisicon-logistic:before {
+  content: '\e677';
+}
+
+.yrisicon-user:before {
+  content: '\e678';
+}
+
+.yrisicon-dispatch:before {
+  content: '\e679';
+}
+
+.yrisicon-goods:before {
+  content: '\e67a';
+}
+
+.yrisicon-supplier:before {
+  content: '\e67b';
+}
+
+.yrisicon-sale:before {
+  content: '\e67c';
+}

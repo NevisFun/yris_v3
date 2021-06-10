@@ -1,5 +1,5 @@
 <template>
-  <div id="yris">
+  <div id="YRIS-APP">
     <a-config-provider :locale="locale">
       <router-view />
     </a-config-provider>

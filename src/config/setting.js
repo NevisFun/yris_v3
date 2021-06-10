@@ -2,7 +2,7 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-05 22:15:58
- * @modify date 2021-06-09 11:06:55
+ * @modify date 2021-06-10 08:37:18
  * @desc 导出默认通用配置
  */
 
@@ -13,6 +13,11 @@ const setting = {
   version: '0.3.0',
   copyright: 'Copyright © 2019 Yongze Recycling Inc',
 
+  // 保存用户名称
+  saveUser: false,
+  // 保存用户密码
+  saveCode: false,
+
   //缓存最大数量
   keepAliveMaxNum: 99,
   //路由安全名单
@@ -21,7 +26,7 @@ const setting = {
   rolesControl: true,
 
   //用户标记名称
-  tokenName: 'ttttnnnn',
+  tokenName: 'wi2fd2$sf',
   //开启登录加密
   loginRSA: false,
   //标记存储位置
