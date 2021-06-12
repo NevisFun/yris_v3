@@ -2,11 +2,11 @@
   <a-layout-header class="yris_layout-titlebar">
     <div class="titlebar-operation">
       <a-button type="link" @click="() => (isCollapse = !isCollapse)">
-        <i :class="isCollapse ? 'yrisicon-pull' : 'yrisicon-push'" />
+        <i :class="isCollapse ? 'yrisicon-pull' : 'yrisicon-push'"></i>
       </a-button>
       <LoginUser />
       <a-button type="link" @click="toggleFull">
-        <i :class="isFull ? 'yrisicon-shrink' : 'yrisicon-spread'" />
+        <i :class="isFull ? 'yrisicon-shrink' : 'yrisicon-spread'"></i>
       </a-button>
     </div>
 
@@ -14,7 +14,9 @@
 
     <div class="titlebar-caption">
       <img class="icon" src="../assets/image/yris.svg" alt="yris" />
-      <span class="title">业务办公信息管理系统</span>
+      <span class="title">
+        业务办公信息管理系统
+      </span>
     </div>
   </a-layout-header>
 </template>

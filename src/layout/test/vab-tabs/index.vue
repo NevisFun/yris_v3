@@ -13,7 +13,7 @@
           :key="item.fullPath"
           :closable="!isAffix(item)"
           :tab="item.meta.title"
-        ></a-tab-pane>
+        />
       </a-tabs>
     </div>
     <div class="vab-tabs-right-panel">

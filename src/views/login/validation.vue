@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvasRef" :width="width" :height="height" @click="draw" />
+  <canvas ref="canvasRef" :width="width" :height="height" @click="draw"></canvas>
 </template>
 
 <script>

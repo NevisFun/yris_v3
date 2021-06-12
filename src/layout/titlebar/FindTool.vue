@@ -1,9 +1,11 @@
 <template>
   <div class="outline" @click="toggleClick">
-    <i class="yrisicon-search" />
+    <i class="yrisicon-search"></i>
   </div>
   <el-drawer v-model="drawer" direction="rtl" size="20%">
-    <template #title>快速查找 </template>
+    <template #title>
+      快速查找
+    </template>
   </el-drawer>
 </template>
 

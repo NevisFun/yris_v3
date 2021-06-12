@@ -2,7 +2,7 @@
   <a-sub-menu :key="item.fullPath">
     <template #title>
       <span class="anticon">
-        <vab-icon :icon="item.meta.icon"></vab-icon>
+        <vab-icon :icon="item.meta.icon" />
       </span>
       <span>{{ item.meta.title }}</span>
     </template>

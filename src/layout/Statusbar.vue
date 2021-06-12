@@ -1,8 +1,14 @@
 <template>
   <a-layout-footer class="yris_layout-statusbar">
-    <div class="statusbar-welcome">欢迎使用本系统</div>
-    <div class="statusbar-summary">计数：35 求和：35544.04</div>
-    <div class="statusbar-state">{{ copyright }}</div>
+    <div class="statusbar-welcome">
+      欢迎使用本系统
+    </div>
+    <div class="statusbar-summary">
+      计数：35 求和：35544.04
+    </div>
+    <div class="statusbar-state">
+      {{ copyright }}
+    </div>
   </a-layout-footer>
 </template>
 

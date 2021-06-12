@@ -1,6 +1,6 @@
 <template>
   <div class="vab-logo">
-    <vab-icon v-if="logo" :icon="logo"></vab-icon>
+    <vab-icon v-if="logo" :icon="logo" />
     <span class="anticon"></span>
     <span>{{ title }}</span>
   </div>

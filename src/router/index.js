@@ -2,7 +2,7 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-05 23:58:33
- * @modify date 2021-06-09 17:03:15
+ * @modify date 2021-06-12 23:50:32
  * @desc 路由配置
  */
 
@@ -58,7 +58,7 @@ router.beforeEach(async (to, from, next) => {
         store.commit('user/setRole', role);
 
         //安全同步路由重新整合异步路由
-        router;
+        router.getRoutes().forEach((route) => router.hasRoute(route.name) && router.removeRoute(route.name));
         const accessRoutes = constantRoutes.concat(filterRoutes(asyncRoutes, role));
         accessRoutes.forEach((item) => {
           router.addRoute(item);

@@ -3,7 +3,7 @@
     <a-tabs v-model:activeKey="activeKey" type="editable-card" animated hide-add>
       <a-tab-pane key="0">
         <template #tab>
-          <span><i class="yrisicon-home" /> 系统首页</span>
+          <span><i class="yrisicon-home"></i> 系统首页</span>
         </template>
         <router-view />
       </a-tab-pane>

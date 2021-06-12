@@ -2,7 +2,7 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-05 23:48:07
- * @modify date 2021-06-12 22:07:31
+ * @modify date 2021-06-12 23:54:10
  * @desc 异步权限路由列表
  */
 
@@ -27,26 +27,26 @@ const asyncRoutes = [
     path: '/',
     name: 'Root',
     component: Layout,
-    alias: '/home',
+    // alias: '/home',
     meta: {
       title: '系统首页',
       icon: 'yrisicon-home',
       role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST'],
       affix: true
     },
-    // children: [
-    //   {
-    //     path: '/home',
-    //     name: 'Home',
-    //     component: () => import('../views/home/index.vue'),
-    //     meta: {
-    //       title: '综合展示',
-    //       icon: 'yrisicon-home',
-    //       role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST'],
-    //       affix: true
-    //     }
-    //   }
-    // ]
+    children: [
+      {
+        path: '/home',
+        name: 'Home',
+        component: () => import('../views/home/index.vue'),
+        meta: {
+          title: '综合展示',
+          icon: 'yrisicon-home',
+          role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST'],
+          affix: true
+        }
+      }
+    ]
   },
   {
     path: '/business',

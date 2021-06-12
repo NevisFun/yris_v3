@@ -1,21 +1,19 @@
 <template>
   <a-layout-sider :collapsed="isCollapse" collapsible class="yris_layout-sider" width="160" :trigger="null">
     <div class="layout_sider-title" :class="isCollapse ? 'state-shrink' : 'state-expand'">
-      <router-link to="/home">
-        <img src="../assets/image/logo.svg" />
-      </router-link>
+      <router-link to="/home"> <img src="../assets/image/logo.svg" /> </router-link>
     </div>
 
     <a-menu v-model:selectedKeys="selectedKey" theme="dark" mode="inline">
       <template v-for="route in accessRoutes">
         <a-sub-menu v-if="route.children && route.children.length" :key="route.path">
           <template #title>
-            <span class="anticon"><i :class="route.meta.icon"/></span>
+            <span class="anticon"> <i :class="route.meta.icon" /> </span>
             <span>{{ route.meta.title }}</span>
           </template>
 
           <a-menu-item v-for="child in route.children" :key="child.fullPath">
-            <span class="anticon"><i :class="child.meta.icon"/></span>
+            <span class="anticon"> <i :class="child.meta.icon" /> </span>
             <span>{{ child.meta.title }}</span>
           </a-menu-item>
         </a-sub-menu>

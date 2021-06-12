@@ -1,7 +1,7 @@
 <template>
   <component :is="menuComponent" v-if="!item.hidden" :item="item" :route-children="routeChildren">
     <template v-if="item.children && item.children.length">
-      <vab-menu v-for="route in item.children" :key="route.path" :item="route"></vab-menu>
+      <vab-menu v-for="route in item.children" :key="route.path" :item="route" />
     </template>
   </component>
 </template>

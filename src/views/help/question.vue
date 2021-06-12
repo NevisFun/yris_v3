@@ -3,7 +3,7 @@
   <a-space>
     <router-link to="/help/question/A">QuestionA</router-link>
     <router-link to="/help/question/B">QuestionB</router-link>
-    <router-view></router-view>
+    <router-view />
   </a-space>
 </template>
 

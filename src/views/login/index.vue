@@ -2,50 +2,70 @@
   <div class="login_outline">
     <a-layout class="login_window">
       <a-layout class="login_window-sider">
-        <div class="owner">九江雍泽再生资源有限公司</div>
+        <div class="owner">
+          九江雍泽再生资源有限公司
+        </div>
         <img class="logo" src="../../assets/image/logo.svg" alt="logo" />
-        <div class="version">V1.0 1920*1080 Be Only Compatible With Latest Chrome</div>
+        <div class="version">
+          V1.0 1920*1080 Be Only Compatible With Latest Chrome
+        </div>
       </a-layout>
 
       <a-layout>
         <a-layout-header height="160px" class="login_window-header">
           <img class="icon" src="../../assets/image/yris.svg" alt="icon" />
-          <div class="title">业务办公信息管理系统</div>
+          <div class="title">
+            业务办公信息管理系统
+          </div>
         </a-layout-header>
 
         <a-layout-content class="login_window-content">
           <a-form :model="loginInfo">
             <a-form-item name="username">
               <a-input v-model:value="loginInfo.username" placeholder="请输入账号" allow-clear>
-                <template #prefix> <i class="yrisicon-account" /> </template>
+                <template #prefix>
+                  <i class="yrisicon-account"></i>
+                </template>
               </a-input>
             </a-form-item>
             <a-form-item name="password">
               <a-input-password v-model:value="loginInfo.password" placeholder="请输入密码">
-                <template #prefix> <i class="yrisicon-password" /> </template>
+                <template #prefix>
+                  <i class="yrisicon-password"></i>
+                </template>
               </a-input-password>
             </a-form-item>
 
             <div class="vertify-wrap">
               <a-input v-model:value="loginInfo.vertify" placeholder="输入验证码" allow-clear>
-                <template #prefix> <i class="yrisicon-validation" /> </template>
+                <template #prefix>
+                  <i class="yrisicon-validation"></i>
+                </template>
               </a-input>
               <Validation id="validation" ref="validationRef" />
             </div>
 
             <div class="check-group">
-              <a-checkbox v-model:checked="saveUser" @change="toggleUser">保存用户</a-checkbox>
-              <a-checkbox v-model:checked="saveCode" @change="toggleCode">保存密码</a-checkbox>
+              <a-checkbox v-model:checked="saveUser" @change="toggleUser">
+                保存用户
+              </a-checkbox>
+              <a-checkbox v-model:checked="saveCode" @change="toggleCode">
+                保存密码
+              </a-checkbox>
             </div>
 
-            <a-button type="primary" @click="onSubmit()">登录系统</a-button>
+            <a-button type="primary" @click="onSubmit()">
+              登录系统
+            </a-button>
           </a-form>
         </a-layout-content>
       </a-layout>
     </a-layout>
 
     <div class="login_footer">
-      <div class="copyright">{{ copyright }}</div>
+      <div class="copyright">
+        {{ copyright }}
+      </div>
       <svg
         class="animation-waves"
         xmlns="http://www.w3.org/2000/svg"
