@@ -58,6 +58,7 @@ router.beforeEach(async (to, from, next) => {
         store.commit('user/setRole', role);
 
         //安全同步路由重新整合异步路由
+        router;
         const accessRoutes = constantRoutes.concat(filterRoutes(asyncRoutes, role));
         accessRoutes.forEach((item) => {
           router.addRoute(item);

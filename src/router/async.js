@@ -2,7 +2,7 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-05 23:48:07
- * @modify date 2021-06-09 16:47:14
+ * @modify date 2021-06-12 22:07:31
  * @desc 异步权限路由列表
  */
 
@@ -25,22 +25,28 @@ import Layout from '../layout/index.vue';
 const asyncRoutes = [
   {
     path: '/',
-    name: 'root',
+    name: 'Root',
     component: Layout,
-    redirect: '/home',
-    children: [
-      {
-        path: '/home',
-        name: 'Home',
-        component: () => import('../views/home/index.vue'),
-        meta: {
-          title: '系统首页',
-          icon: 'yrisicon-home',
-          role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST'],
-          affix: true
-        }
-      }
-    ]
+    alias: '/home',
+    meta: {
+      title: '系统首页',
+      icon: 'yrisicon-home',
+      role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST'],
+      affix: true
+    },
+    // children: [
+    //   {
+    //     path: '/home',
+    //     name: 'Home',
+    //     component: () => import('../views/home/index.vue'),
+    //     meta: {
+    //       title: '综合展示',
+    //       icon: 'yrisicon-home',
+    //       role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST'],
+    //       affix: true
+    //     }
+    //   }
+    // ]
   },
   {
     path: '/business',
@@ -115,7 +121,7 @@ const asyncRoutes = [
     redirect: '/help/tip',
     meta: {
       title: '系统帮助',
-      icon: 'yrisicon-help',
+      icon: 'yrisicon-high',
       role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST']
     },
     children: [
@@ -138,6 +144,38 @@ const asyncRoutes = [
           icon: 'yrisicon-about',
           role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST']
         }
+      },
+      {
+        path: '/help/question',
+        name: 'Question',
+        component: () => import('../views/help/question.vue'),
+        meta: {
+          title: '问题列表',
+          icon: 'yrisicon-question',
+          role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST']
+        },
+        children: [
+          {
+            path: '/help/question/A',
+            name: 'QuestionA',
+            component: () => import('../views/help/QuestionA.vue'),
+            meta: {
+              title: '问题A',
+              icon: 'yrisicon-question',
+              role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST']
+            }
+          },
+          {
+            path: '/help/question/B',
+            name: 'QuestionB',
+            component: () => import('../views/help/QuestionB.vue'),
+            meta: {
+              title: '问题B',
+              icon: 'yrisicon-question',
+              role: ['SUPER', 'ADMIN', 'COMMON', 'GUEST']
+            }
+          }
+        ]
       }
     ]
   }
