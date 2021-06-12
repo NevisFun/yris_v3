@@ -1,55 +1,47 @@
 <template>
-  <div id="statusbar">
-    <div id="tip">欢迎使用本系统☺☺</div>
-    <div id="summary">计数：35 求和：35544.04</div>
-    <div id="state">Copyright © 2019 Yongze</div>
-  </div>
+  <a-layout-footer class="yris_layout-statusbar">
+    <div class="statusbar-welcome">欢迎使用本系统</div>
+    <div class="statusbar-summary">计数：35 求和：35544.04</div>
+    <div class="statusbar-state">{{ copyright }}</div>
+  </a-layout-footer>
 </template>
 
-<script type="text/javascript">
-export default {
-  name: "statusbar",
-};
+<script>
+import { defineComponent } from 'vue';
+import config from '../config/setting.js';
+
+export default defineComponent({
+  name: 'Statusbar',
+  setup() {
+    return { copyright: config.copyright };
+  }
+});
 </script>
 
-<style lang="scss" scoped>
-@import "../../css/variable.scss";
-$heightStatusbar: 40px;
+<style lang="less">
+@import '../styles/quote.less';
 
-#statusbar {
-  height: $heightStatusbar;
-  line-height: $heightStatusbar;
+.yris_layout-statusbar {
+  height: @bar-height;
+  background-color: @back-color-bar;
+  line-height: @bar-height;
   display: grid;
-  grid-template-columns: auto 240px 240px;
+  grid-template-columns: auto 240px fit-content(0);
 
-  #tip {
-    height: $heightStatusbar;
-    padding-left: 16px;
-    color: $textColorMinor;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+  .statusbar-welcome {
+    padding-left: @area-padding;
   }
 
-  #summary {
-    $margin: 4px;
-    $height: $heightStatusbar - $margin * 2;
-
-    box-sizing: content-box;
-    height: $height;
-    line-height: $height;
+  .statusbar-summary {
     text-align: center;
-    margin: $margin 0 $margin 0;
-    border-left: 1px solid rgba($borderColorLight, 0.5);
-    border-right: 1px solid rgba($borderColorLight, 0.5);
-    @extend .minorText;
+    border-left: 1px solid rgba(@border-color-light, 0.5);
+    border-right: 1px solid rgba(@border-color-light, 0.5);
+    .minor-text();
   }
 
-  #state {
-    height: $heightStatusbar;
-    padding: 0 16px 0 16px;
-    text-align: center;
-    font-weight: 500;
-    color: $colorTheme;
+  .statusbar-state {
+    padding: 0 @area-padding;
+    color: @theme-color;
   }
 }
 </style>

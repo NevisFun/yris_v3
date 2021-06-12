@@ -1,62 +1,68 @@
 <template>
-  <!-- <a-row>
-          <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
-            <menu-unfold-outlined v-if="collapse" class="trigger" @click="toggleCollapse" />
-            <menu-fold-outlined v-else class="trigger" @click="toggleCollapse" />
-          </a-col>
-          <a-col :xs="12" :sm="12" :md="12" :lg="12" :xl="12">
-            <vab-avatar />
-          </a-col>
-        </a-row> -->
-  <a-layout-header id="titlebar">
-    <div id="toolbar">
-      <el-button type="text"><i class="yrisicon-pull"/></el-button>
-      <userinfo id="userinfo" />
-      <el-tooltip placement="bottom" :content="isFull ? '退出全屏' : '全屏模式'">
-        <el-button type="text" @click="toggleFull">
-          <i :class="isFull ? 'yrisicon-shrink' : 'yrisicon-spread'" />
-        </el-button>
-      </el-tooltip>
+  <a-layout-header class="yris_layout-titlebar">
+    <div class="titlebar-operation">
+      <a-button type="link" @click="() => (isCollapse = !isCollapse)">
+        <i :class="isCollapse ? 'yrisicon-pull' : 'yrisicon-push'" />
+      </a-button>
+      <LoginUser />
+      <a-button type="link" @click="toggleFull">
+        <i :class="isFull ? 'yrisicon-shrink' : 'yrisicon-spread'" />
+      </a-button>
     </div>
 
-    <taskbar id="taskbar" />
+    <Breadcrumb class="titlebar-bread" />
 
-    <div id="caption">
-      <img id="yris" src="../../asset/image/yris.svg" alt="yris" style="vertical-align: -2px" />
-      <span id="title">业务办公信息管理系统</span>
+    <div class="titlebar-caption">
+      <img class="icon" src="../assets/image/yris.svg" alt="yris" />
+      <span class="title">业务办公信息管理系统</span>
     </div>
   </a-layout-header>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from "vue";
-import Taskbar from "./Taskbar.vue";
-import Userinfo from "./TheUser.vuee
+<script>
+import { defineComponent, ref, computed } from 'vue';
+import { useStore } from 'vuex';
+import LoginUser from './titlebar/LoginUser.vue';
+import Breadcrumb from './titlebar/Breadcrumb.vue';
 
 export default defineComponent({
-  name: "Titlebar",
-  components: { Taskbar, Userinfo },
+  name: 'Titlebar',
+  components: { LoginUser, Breadcrumb },
 
   setup() {
+    const store = useStore();
     const isFull = ref(false);
 
-    const toggleFull = (): void => {
+    const isCollapse = computed({
+      get() {
+        return store.getters['setting/isCollapse'];
+      },
+      set(value) {
+        store.commit('setting/setCollapse', value);
+      }
+    });
+
+    const toggleFull = () => {
       isFull.value = !isFull.value;
       if (isFull.value) {
         fullScreen();
       } else exitScreen();
     };
 
-    const fullScreen = (): void => {
-      let element = document.documentElement as any;
-      let requestFull = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullscreen;
-      if (typeof requestFull != "undefined" && requestFull) {
+    const fullScreen = () => {
+      let element = document.documentElement;
+      let requestFull =
+        element.requestFullScreen ||
+        element.webkitRequestFullScreen ||
+        element.mozRequestFullScreen ||
+        element.msRequestFullscreen;
+      if (typeof requestFull != 'undefined' && requestFull) {
         requestFull.call(element);
       }
     };
 
-    const exitScreen = (): void => {
-      let cencelFull = document as any;
+    const exitScreen = () => {
+      let cencelFull = document;
       if (cencelFull.exitFullscreen) {
         cencelFull.exitFullscreen();
       } else if (cencelFull.webkitCancelFullScreen) {
@@ -66,47 +72,44 @@ export default defineComponent({
       }
     };
 
-    return { isFull, toggleFull };
+    return { isFull, isCollapse, toggleFull };
   }
 });
 </script>
 
-<style lang="scss" scoped>
-@import '../../css/variable.scss';
-$heightTitlebar: 40px;
+<style lang="less">
+@import '../styles/quote.less';
 
-#titlebar {
-  width: 100%;
-  height: $heightTitlebar;
+.yris_layout-titlebar {
+  height: @bar-height;
+  background-color: @back-color-work;
   display: grid;
-  grid-template-columns: 170px auto 284px;
+  grid-template-columns: 200px auto 284px;
 
-  #toolbar {
+  .titlebar-operation {
     display: grid;
     grid-template-columns: 40px auto 40px;
-
-    #userinfo {
-      padding: 0 8px 0 8px;
-      height: $heightTitlebar;
-    }
-
-    #taskbar {
-      height: heightTitlebar;
-    }
+    align-content: center;
+    border-right: 1px solid rgba(@border-color-light, 0.5);
   }
 
-  #caption {
-    padding: 8px 16px 8px 16px;
+  .titlebar-bread {
+    padding: 8px 16px;
+  }
+
+  .titlebar-caption {
+    padding: 4px 0;
     text-align: center;
-    background-color: rgba($colorTheme, 0.05);
-    #yris {
+    background-color: rgba(@theme-color, 0.3);
+    .icon {
       margin-right: 8px;
-      height: 16px;
+      height: @font-size-large;
+      vertical-align: -2px;
     }
-    #title {
-      font-size: 18px;
+    .title {
+      font-size: @font-size-huge;
       font-weight: 600;
-      color: $textColorMajor;
+      color: @text-color-white;
     }
   }
 }

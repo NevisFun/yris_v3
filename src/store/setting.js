@@ -2,7 +2,7 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-06 00:46:05
- * @modify date 2021-06-10 20:41:54
+ * @modify date 2021-06-11 22:29:53
  * @desc 全局设置状态管理
  */
 
@@ -23,7 +23,7 @@ const getLocalStorage = (key) => {
 const setLocalStorage = (key, value) => localStorage.setItem(generateKey(key), value);
 
 const state = () => ({
-  iscollapsed: getLocalStorage('iscollapsed') || false,
+  isCollapse: getLocalStorage('isCollapse') || false,
   themeName: getLocalStorage('themeName') || config.themeName,
   showCollapse: getLocalStorage('showCollapse') || config.showCollapse,
   showProgress: getLocalStorage('showProgress') || config.showProgress,
@@ -36,7 +36,7 @@ const state = () => ({
 });
 
 const getters = {
-  iscollapsed: (state) => state.iscollapsed,
+  isCollapse: (state) => state.isCollapse,
   themeName: (state) => state.themeName,
   showCollapse: (state) => state.showCollapse,
   showProgress: (state) => state.showProgress,
@@ -49,9 +49,9 @@ const getters = {
 };
 
 const mutations = {
-  toggleCollapse(state) {
-    state.iscollapsed = !state.iscollapsed;
-    setLocalStorage('iscollapsed', state.iscollapsed);
+  setCollapse(state, isCollapse) {
+    state.isCollapse = isCollapse;
+    setLocalStorage('isCollapse', state.isCollapse);
   },
   setThemeName(state, themeName) {
     console.log(themeName);
@@ -90,8 +90,8 @@ const mutations = {
 };
 
 const actions = {
-  toggleCollapse: ({ commit }) => {
-    commit('toggleCollapse');
+  setCollapse: ({ commit }, isCollapse) => {
+    commit('setCollapse', isCollapse);
   },
   setThemeName: ({ commit }, themeName) => {
     commit('setThemeName', themeName);

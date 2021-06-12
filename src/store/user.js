@@ -2,7 +2,7 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-07 18:47:48
- * @modify date 2021-06-09 10:11:18
+ * @modify date 2021-06-12 19:21:06
  * @desc 获取用户信息状态管理|登录登出
  */
 
@@ -11,7 +11,6 @@ import config from '../config/index.js';
 import { message, notification } from 'ant-design-vue';
 
 /**
- * @author wang.chaofeng
  * @desc 读取|存储|清除accessToken
  * @param accessToken
  * @returns {void|*}

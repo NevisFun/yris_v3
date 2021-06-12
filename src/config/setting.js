@@ -2,7 +2,7 @@
  * @author wang.chaofeng
  * @email hzspaces@126.com
  * @create date 2021-06-05 22:15:58
- * @modify date 2021-06-10 08:37:18
+ * @modify date 2021-06-12 21:58:05
  * @desc 导出默认通用配置
  */
 
@@ -11,7 +11,7 @@ const setting = {
   title: 'Yongze Business Information System',
   abbreviation: 'YRIS',
   version: '0.3.0',
-  copyright: 'Copyright © 2019 Yongze Recycling Inc',
+  copyright: 'Copyright ©' + new Date().getFullYear() + ' Yongze Inc.',
 
   // 保存用户名称
   saveUser: false,

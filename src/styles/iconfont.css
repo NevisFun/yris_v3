@@ -1,8 +1,16 @@
 @font-face {
   font-family: 'iconfont'; /* Project id 1445121 */
-  src: url('//at.alicdn.com/t/font_1445121_zstjgc5ojf.woff2?t=1622693988402') format('woff2'),
-    url('//at.alicdn.com/t/font_1445121_zstjgc5ojf.woff?t=1622693988402') format('woff'),
-    url('//at.alicdn.com/t/font_1445121_zstjgc5ojf.ttf?t=1622693988402') format('truetype');
+  src: url('//at.alicdn.com/t/font_1445121_x7klia04j7a.woff2?t=1623398367017') format('woff2'),
+    url('//at.alicdn.com/t/font_1445121_x7klia04j7a.woff?t=1623398367017') format('woff'),
+    url('//at.alicdn.com/t/font_1445121_x7klia04j7a.ttf?t=1623398367017') format('truetype');
+}
+
+.yrisicon-pull:before {
+  content: '\e6b0';
+}
+
+.yrisicon-push:before {
+  content: '\e6b7';
 }
 
 .yrisicon-fix:before {
@@ -31,10 +39,6 @@
 
 .yrisicon-logo:before {
   content: '\e666';
-}
-
-.yrisicon-pull:before {
-  content: '\e6b0';
 }
 
 .yrisicon-loop:before {

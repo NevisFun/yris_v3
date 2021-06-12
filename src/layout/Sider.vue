@@ -1,76 +1,77 @@
 <template>
-  <a-layout-sider v-model:collapsed="collapsed" collapsible class="yris-layout-sider" width="160">
-    <div id="logo">
-      <router-link to="Home"> <img src="../assets/image/logo.svg" /> </router-link>
+  <a-layout-sider :collapsed="isCollapse" collapsible class="yris_layout-sider" width="160" :trigger="null">
+    <div class="layout_sider-title" :class="isCollapse ? 'state-shrink' : 'state-expand'">
+      <router-link to="/home">
+        <img src="../assets/image/logo.svg" />
+      </router-link>
     </div>
-    <a-menu v-model:selectedKeys="selectedKeys" v-model:openKeys="openKeys" class="vab-menu" theme="dark" mode="inline">
-      <vab-menu v-for="route in routes" :key="route.path" :item="route" />
+
+    <a-menu v-model:selectedKeys="selectedKey" theme="dark" mode="inline">
+      <template v-for="route in accessRoutes">
+        <a-sub-menu v-if="route.children && route.children.length" :key="route.path">
+          <template #title>
+            <span class="anticon"><i :class="route.meta.icon"/></span>
+            <span>{{ route.meta.title }}</span>
+          </template>
+
+          <a-menu-item v-for="child in route.children" :key="child.fullPath">
+            <span class="anticon"><i :class="child.meta.icon"/></span>
+            <span>{{ child.meta.title }}</span>
+          </a-menu-item>
+        </a-sub-menu>
+      </template>
     </a-menu>
   </a-layout-sider>
 </template>
 
-
-      // <div id="logo">
-      //   <router-link to="Home"> <img src="../assets/image/logo.svg" /> </router-link>
-      // </div>
-      // <a-menu
-      //   v-model:selectedKeys="selectedKeys"
-      //   v-model:openKeys="openKeys"
-      //   class="vab-menu"
-      //   theme="dark"
-      //   mode="inline"
-      // >
-      //   <vab-menu v-for="route in routes" :key="route.path" :item="route" />
-      // </a-menu>
-
-<script >
-import { defineComponent } from 'vue';
+<script>
+import { defineComponent, ref, computed } from 'vue';
+import { useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 
 export default defineComponent({
-  name: 'Sider'
+  name: 'Sider',
+
+  setup() {
+    const store = useStore();
+    const accessRoutes = useRouter().getRoutes();
+
+    const selectedKey = ref(['\\home']);
+    const isCollapse = computed({
+      get() {
+        return store.getters['setting/isCollapse'];
+      },
+      set(value) {
+        store.commit('setting/setCollapse', value);
+      }
+    });
+
+    console.log(accessRoutes, accessRoutes[1].children);
+    return { isCollapse, selectedKey, accessRoutes };
+  }
 });
 </script>
 
-<style lang="scss" scoped>
-@import '../../css/variable.scss';
-$widthNavigator: 160px;
+<style lang="less">
+@import '../styles/quote.less';
+@import '~ant-design-vue/dist/antd.less';
 
-#navigator {
-  #logo {
-    background-color: rgba(black, 0.2);
-    box-sizing: border-box;
-    height: $widthNavigator;
-    padding: ($widthNavigator - 80px)/2;
+.yris_layout-sider {
+  width: @sider-width;
+
+  .layout_sider-title {
+    background-color: @back-color-side;
   }
-
-  #nav {
-    .el-menu {
-      border-right: 0;
-      background-color: transparent;
-    }
-
-    :deep(.el-submenu__title),
-    .el-menu-item {
-      height: 48px;
-      line-height: 48px;
-      color: $textColorMinor;
-      &:hover {
-        color: $textColorNormal;
-      }
-    }
-
-    i {
-      padding: 0 12px 0 0;
-    }
-
-    :deep(.el-menu--inline) {
-      background-color: rgba(white, 0.1);
-    }
-
-    ::v-deep .el-menu-item.is-active {
-      background-color: $colorTheme;
-      color: $textColorLight;
-    }
+  .state-expand {
+    height: calc(@sider-width / 1);
+    padding: calc(@sider-width / 4);
+  }
+  .state-shrink {
+    height: calc(@sider-width / 2);
+    padding: calc(@sider-width / 8);
+  }
+  .ant-menu-item-selected {
+    border-left: 2px solid @white;
   }
 }
 </style>

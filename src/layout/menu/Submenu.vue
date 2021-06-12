@@ -1,6 +1,6 @@
 <template>
   <a-sub-menu :key="item.fullPath">
-    <template v-slot:title>
+    <template #title>
       <span class="anticon">
         <vab-icon :icon="item.meta.icon"></vab-icon>
       </span>

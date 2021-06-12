@@ -17,13 +17,6 @@
   }
 }
 
-// 次要文字
-.minor-text {
-  font-size: @font-size-normal;
-  font-weight: normal;
-  color: @text-color-minor;
-}
-
 // 重要文字
 .major-text {
   font-size: @font-size-large;
@@ -31,7 +24,14 @@
   color: @text-color-major;
 }
 
-//普通标题
+// 次要文字
+.minor-text {
+  font-size: @font-size-normal;
+  font-weight: normal;
+  color: @text-color-minor;
+}
+
+// 普通标题
 .caption-text {
   .minor-text();
   &::after {
@@ -39,10 +39,15 @@
   }
 }
 
-//连接文本
+// 连接文本
 .link-text {
   cursor: pointer;
   color: @theme-color;
+}
+
+// 尾部空格
+.tail-space:after {
+  content: '\00a0';
 }
 
 // 透明色块

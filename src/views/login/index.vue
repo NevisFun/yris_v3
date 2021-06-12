@@ -45,7 +45,7 @@
     </a-layout>
 
     <div class="login_footer">
-      <div class="copyright">Copyright © 2021 Yongze Recycling Inc, All Rights Reserved</div>
+      <div class="copyright">{{ copyright }}</div>
       <svg
         class="animation-waves"
         xmlns="http://www.w3.org/2000/svg"
@@ -72,6 +72,7 @@
 import { defineComponent, reactive, ref, unref, onMounted } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
+import config from '../../config/setting.js';
 import Validation from './validation.vue';
 
 export default defineComponent({
@@ -86,6 +87,7 @@ export default defineComponent({
     const saveUser = ref(store.getters['setting/saveUser']);
     const saveCode = ref(store.getters['setting/saveCode']);
 
+    const copyright = ref(config.copyright);
     const toggleUser = () => {
       store.commit('setting/setSaveUser', saveUser.value);
     };
@@ -108,7 +110,7 @@ export default defineComponent({
       if (saveUser.value) store.commit('setting/setUsername', loginInfo.username);
       if (saveCode.value) store.commit('setting/setPassword', loginInfo.password);
     };
-    return { loginInfo, validationRef, onSubmit, saveUser, saveCode, toggleUser, toggleCode };
+    return { loginInfo, validationRef, onSubmit, saveUser, saveCode, toggleUser, toggleCode, copyright };
   }
 });
 </script>
@@ -173,7 +175,7 @@ export default defineComponent({
     .title {
       line-height: 36px;
       color: @text-color-minor;
-      font-size: 18px;
+      font-size: @font-size-huge;
       letter-spacing: 2px;
       font-weight: 600;
     }

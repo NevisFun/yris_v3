@@ -2,11 +2,11 @@
   <div class="vab-tabs">
     <div class="vab-tabs-left-panel">
       <a-tabs
-        @tab-click="handleTabClick"
-        @edit="handleTabRemove"
         v-model:activeKey="tabActive"
         hide-add
         type="editable-card"
+        @tab-click="handleTabClick"
+        @edit="handleTabRemove"
       >
         <a-tab-pane
           v-for="item in visitedRoutes"
@@ -18,7 +18,7 @@
     </div>
     <div class="vab-tabs-right-panel">
       <a-dropdown>
-        <template v-slot:overlay>
+        <template #overlay>
           <a-menu @click="handleClick">
             <a-menu-item key="closeOthersTabs">
               <a>关闭其他</a>
